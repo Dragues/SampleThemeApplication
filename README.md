@@ -126,10 +126,6 @@ class TextComponent @JvmOverloads constructor(
 ) : AppCompatTextView(context, attrs, defStyleAttr)
 ```
 
-Ранее в статье мы разбирали стандартный конструктор  View. 
-
-Продублирую здесь:
-
 `attrs` → Атрибуты приходящие из определения `.xml` (в том числе кастомные атрибуты view) 
 
 `defStyleAttr` → дефолтный стиль `view` 
