@@ -105,3 +105,78 @@ Aтрибут theme_background будет затянут непосредств�
 setTheme(if (false) R.style.TestTheme else R.style.TestTheme2)
 setContentView(R.layout.activity_main)
 ```
+
+## Создаем модуль с  компонентами дизайн системы
+
+Подготовительные шаги:
+
+- Создаем отдельным модулем дизайн систему `:designsystem` в виде Android library.
+- Создаем палитру внутри модуля colors.xml
+- Определение стилей компонентов и тем переносим на  модуль, т.к компоненты дизайн системы должны на них ссылаться.
+
+### Создадим простенький текстовый компонент
+
+Назовем его  TextComponent. Создадим его класс:
+
+```kotlin
+class TextComponent @JvmOverloads constructor(
+    context: Context,
+    attrs: AttributeSet? = null,
+    defStyleAttr: Int = R.attr.ds_text_component_style
+) : AppCompatTextView(context, attrs, defStyleAttr)
+```
+
+Ранее в статье мы разбирали стандартный конструктор  View. 
+
+Продублирую здесь:
+
+`attrs` → Атрибуты приходящие из определения `.xml` (в том числе кастомные атрибуты view) 
+
+`defStyleAttr` → дефолтный стиль `view` 
+
+`**defStyleAttr` здесь мы используем чтобы определить дефолтный стиль View.**
+
+`ds_text_component_style`  это один из стилей темы, определим его в `attrs_theme.xml` 
+
+там же где и определяли цвет `theme_background.`  
+
+```xml
+ <resources>
+    <attr name="theme_background" format="color"/>
+    <attr name="ds_text_component_style" format="reference"/>
+</resources>
+```
+
+Конкретные `ds_text_component_style` мы определим отдельно в каждой из тем (`theme.xml` и `theme2.xml`)
+
+Вот определение стиля текстового компонента в теме. Аналогично будет и во второй из тем.
+
+```xml
+<style name="TestTheme" parent="Theme.AppCompat.Light">
+    <item name="theme_background">#123456</item>
+    <item name="ds_text_component_style">@style/TextComponent.FistTheme</item>
+</style>
+```
+
+Сами стили по каждому из компонентов дизайн системы делать в отдельных файликах `attrs_component_name.xml` чтобы потом не запутаться в куче стилей.
+
+Вот пример attrs_text.xml:
+
+```xml
+<resources>
+    <style name="BaseTextWidget" parent="android:Widget.TextView"/>
+    <style name="TextComponent" parent="BaseTextWidget">
+        <item name="android:textSize">28sp</item>
+        <item name="lineHeight">34sp</item>
+        <item name="fontFamily">@font/something_font</item>
+    </style>
+    <style name="TextComponent.FistTheme">
+        <item name="android:textColor">@color/component_red</item>
+    </style>
+    <style name="TextComponent.SecondTheme">
+        <item name="android:textColor">@color/component_green</item>
+    </style>
+</resources>
+```
+
+ Работу с темами можно сравнить с определением интерфейса и его конкретными реализациями, здесь все то же самое. Ниже отображение добавленного текстового компонента при переключении между темами.
