@@ -1,5 +1,5 @@
 # SampleThemeApplication
-Application for theme testing and design system implementation guide.
+Гайд по созданию приложения поддерживающего множество тем и создание модуля с компонентами дизайн системы, которые оддерживают темы.
 
 
 ## Заводим тестовый проект с поддержкой тем.
