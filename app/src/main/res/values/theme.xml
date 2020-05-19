@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TestTheme" parent="Theme.AppCompat.Light">
+        <item name="theme_background">#123456</item>
+    </style>
+
+    <style name="TestTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+</resources>
