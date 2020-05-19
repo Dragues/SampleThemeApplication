@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="BaseTextWidget" parent="android:Widget.TextView"/>
+
+    <style name="TextComponent" parent="BaseTextWidget">
+        <item name="android:textSize">28sp</item>
+        <item name="lineHeight">34sp</item>
+        <item name="fontFamily">@font/</item>
+    </style>
+
+    <style name="TextComponent.FistTheme">
+        <item name="android:textColor">@color/component_red</item>
+    </style>
+
+    <style name="TextComponent.SecondTheme">
+        <item name="android:textColor">@color/component_green</item>
+    </style>
+</resources>

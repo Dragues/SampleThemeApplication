@@ -3,6 +3,7 @@
 
     <style name="TestTheme" parent="Theme.AppCompat.Light">
         <item name="theme_background">#123456</item>
+        <item name="ds_text_component_style">@style/TextComponent.FistTheme</item>
     </style>
 
     <style name="TestTheme.NoActionBar">

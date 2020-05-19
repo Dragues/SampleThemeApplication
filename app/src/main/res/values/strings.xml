@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SampleThemeApplication</string>
+    <string name="title_design_system">designsystem</string>
 </resources>

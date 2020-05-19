@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <attr name="theme_background" format="color"/>
+    <attr name="ds_text_component_style" format="reference"/>
 </resources>

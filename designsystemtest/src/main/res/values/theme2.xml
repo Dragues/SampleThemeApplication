@@ -3,6 +3,7 @@
 
     <style name="TestTheme2" parent="Theme.AppCompat.Light">
         <item name="theme_background">#654321</item>
+        <item name="ds_text_component_style">@style/TextComponent.SecondTheme</item>
     </style>
 
     <style name="TestTheme2.NoActionBar">
