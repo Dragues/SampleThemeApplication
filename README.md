@@ -1,11 +1,10 @@
 # SampleThemeApplication
 Application for theme testing and design system implementation guide.
 
+
 ## Заводим тестовый проект с поддержкой тем.
 
 Создаем тестовый проект с пустой Activity. Для работы с темами лучше использовать Android API 21 (5.0 Loliloop) поскольку поддержка тем идет в полной мере. Ниже версии не могут правильно работать со стилизованными в темы селекторами (об этом упомянул ранее).
-
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/59a9b488-6619-45c9-b0ef-7ac9dee4d59c/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/59a9b488-6619-45c9-b0ef-7ac9dee4d59c/Untitled.png)
 
 Пустая шаблонная Activity имеет такой вид:
 
@@ -97,16 +96,6 @@ Aтрибут theme_background будет затянут непосредств�
     <item name="windowNoTitle">true</item>
 </style>
 ```
-
-В результате получаем при использовании тем следующие результаты:
-
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/651b555a-e513-4e15-a767-46fb29ec509e/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/651b555a-e513-4e15-a767-46fb29ec509e/Untitled.png)
-
-TestTheme
-
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c06529d1-d11f-4e64-be55-c00233d28777/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c06529d1-d11f-4e64-be55-c00233d28777/Untitled.png)
-
-TestTheme2
 
 Чтобы иметь возможность применять любую из набора тем, у Activity есть метод `setTheme()`
 
